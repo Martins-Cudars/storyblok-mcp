@@ -1,14 +1,16 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import dotenv from "dotenv";
+import path from "path";
+
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 // Create the MCP server
 const server = new McpServer({
   name: "skeleton-manager",
   version: "1.0.0",
 });
-
-import "dotenv/config";
 
 const STORYBLOK_SPACE_ID = process.env.STORYBLOK_SPACE_ID;
 const STORYBLOK_MANAGEMENT_TOKEN = process.env.STORYBLOK_MANAGEMENT_TOKEN;
