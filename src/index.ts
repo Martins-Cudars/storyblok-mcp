@@ -4,11 +4,11 @@ import { z } from "zod";
 import dotenv from "dotenv";
 import path from "path";
 
-dotenv.config({ path: path.resolve(__dirname, "../.env") });
+dotenv.config({ path: path.resolve(__dirname, "../.env"), quiet: true });
 
 // Create the MCP server
 const server = new McpServer({
-  name: "skeleton-manager",
+  name: "storyblok-mcp",
   version: "1.0.0",
 });
 
